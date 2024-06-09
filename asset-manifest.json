@@ -1,14 +1,15 @@
 {
   "files": {
-    "main.css": "/github-stars-explorer/static/css/main.a11896d2.css",
-    "main.js": "/github-stars-explorer/static/js/main.5d3cba99.js",
+    "main.css": "/github-stars-explorer/static/css/main.e49da301.css",
+    "main.js": "/github-stars-explorer/static/js/main.b465a3b1.js",
+    "static/media/GithubLogo.svg": "/github-stars-explorer/static/media/GithubLogo.72763b06b2fb3ded940735c932946774.svg",
     "index.html": "/github-stars-explorer/index.html",
     "static/media/LocationIcon.svg": "/github-stars-explorer/static/media/LocationIcon.dec2fc818a78c54bafa2c382b1b5bcf2.svg",
-    "main.a11896d2.css.map": "/github-stars-explorer/static/css/main.a11896d2.css.map",
-    "main.5d3cba99.js.map": "/github-stars-explorer/static/js/main.5d3cba99.js.map"
+    "main.e49da301.css.map": "/github-stars-explorer/static/css/main.e49da301.css.map",
+    "main.b465a3b1.js.map": "/github-stars-explorer/static/js/main.b465a3b1.js.map"
   },
   "entrypoints": [
-    "static/css/main.a11896d2.css",
-    "static/js/main.5d3cba99.js"
+    "static/css/main.e49da301.css",
+    "static/js/main.b465a3b1.js"
   ]
 }
