@@ -2,13 +2,14 @@ import { useParams } from 'react-router-dom';
 import { useFetchOwnerDetails } from '../apis/useFetchOwnerDetails';
 import styles from './OwnerDetails.module.scss'
 import {ReactComponent as LocationIcon} from '../assets/LocationIcon.svg'
+import Spinner from '../components/Spinner';
 
 const Owner: React.FC = () => {
   const { owner } = useParams<{owner: string}>();
   const ownerDetails = useFetchOwnerDetails(owner!)
 
   if (ownerDetails.isLoading) {
-    return <p>Loading...</p>;
+    return <Spinner />
   }
 
   if (ownerDetails.isError) {

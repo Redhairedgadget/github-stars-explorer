@@ -2,6 +2,7 @@ import styles from './RepoList.module.scss'
 import { Link } from 'react-router-dom';
 import Pagination from '../components/Pagination';
 import { useFetchRepos } from '../apis/useFetchRepos';
+import Spinner from '../components/Spinner';
 
 interface RepoListProps {
   currentPage: number
@@ -16,7 +17,7 @@ const RepoList: React.FC<RepoListProps> = ({currentPage, setCurrentPage}) => {
   };
 
   if (repoQuery.isLoading) {
-    return <p>Loading...</p>;
+    return <Spinner />;
   }
 
   if (repoQuery.isError) {

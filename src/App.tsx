@@ -7,7 +7,6 @@ import Header from './components/Header'
 import Content from './components/Content';
 
 const App: React.FC = () => {
-
   const [currentPage, setCurrentPage] = useState<number>(1);
 
   return (

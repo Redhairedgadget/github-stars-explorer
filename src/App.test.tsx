@@ -1,10 +1,10 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
-import App from '../../App';
-import { useFetchRepos } from '../../apis/useFetchRepos';
+import App from './App';
+import { useFetchRepos } from './apis/useFetchRepos';
 
-jest.mock('../../apis/useFetchRepos');
+jest.mock('./apis/useFetchRepos');
 
 const queryClient = new QueryClient();
 
@@ -44,7 +44,7 @@ describe('Home Page', () => {
     });
     renderWithProviders();
 
-    expect(screen.getByText('Loading...')).toBeInTheDocument();
+    expect(screen.getByTestId('spinner')).toBeInTheDocument();
   });
 
   test('should render list of repos when request is successful', async () => {
