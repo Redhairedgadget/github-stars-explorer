@@ -1,0 +1,56 @@
+.ownerDetails {
+  display: flex;
+  align-items: flex-start;
+  background-color: var(--background-light-dark);
+  padding: 3vh;
+  border: 1px solid var(--medium-gray);
+  border-radius: var(--border-radius);
+  margin: 2vh 0;
+
+  .avatarContainer {
+    flex-shrink: 0;
+    margin-right: 2rem;
+  }
+
+  .avatar {
+    width: 20vh;
+    height: 20vh;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--medium-gray);
+  }
+
+  .info {
+    flex-grow: 1;
+    color: var(--very-light-gray);
+
+    .name {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .bio,
+    .location {
+      margin-bottom: 0.5rem;
+    }
+
+    .profile-link {
+      color: var(--blue);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .ownerDetails {
+    flex-direction: column;
+
+    .avatarContainer {
+      margin-right: 0;
+    }
+  }
+}
+

@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
+import styles from './Header.module.scss'
 
 const Header: React.FC  = () => {
   return (
-    <header>
-      <h1>
-        <Link to="/">Top ⭐ Repositories</Link>
-      </h1>
+    <header className={styles.header}>
+      <h2>
+        <Link to="/">Github STARS</Link>
+      </h2>
     </header>
   );
 }

@@ -16,7 +16,6 @@ export const fetchTopStarredRepositories = async (page: number) => {
 
       // Get total pages from the Link header
         const linkHeader = response.headers.link;
-        console.log('linkHeader: ', response)
         const totalPages = linkHeader ? parseInt(linkHeader.match(/page=(\d+)>; rel="last"/)[1]) : 1;
       
       console.log({

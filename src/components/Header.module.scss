@@ -1,0 +1,13 @@
+.header {
+    display: flex;
+    background-color: var(--background-header-dark);
+    justify-content: center;
+    color: white;
+    text-align: center;
+    border-bottom: 1px solid var(--medium-gray);
+    
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+}

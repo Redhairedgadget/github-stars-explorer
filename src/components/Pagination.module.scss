@@ -1,0 +1,20 @@
+.pagination {
+    display: flex;
+    align-items: center;
+
+    .buttons button {
+        margin-right: 1vh;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .pagination {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .buttons {
+            margin-bottom: 2vh;
+        }
+    }
+}

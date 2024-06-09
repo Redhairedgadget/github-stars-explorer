@@ -1,0 +1,11 @@
+.repoDetailsContainer {
+    background-color: var(--background-light-dark);
+    padding: 3vh;
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--border-radius);
+    margin: 2vh 0;
+
+    h3 {
+        margin: 0;
+    }
+}

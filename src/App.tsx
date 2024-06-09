@@ -4,6 +4,7 @@ import RepoList from './pages/RepoList';
 import OwnerDetails from './pages/OwnerDetails';
 import RepoDetails from './pages/RepoDetails';
 import Header from './components/Header'
+import Content from './components/Content';
 
 const App: React.FC = () => {
 
@@ -12,11 +13,13 @@ const App: React.FC = () => {
   return (
     <Router>
       <Header />
-      <Routes>
-        <Route path="/" element={<RepoList currentPage={currentPage} setCurrentPage={setCurrentPage}/>} />
-        <Route path="/repository/:owner/:repoName" element={<RepoDetails/>} />
-        <Route path="/owner/:owner" element={<OwnerDetails/>} />
-      </Routes>
+      <Content>
+        <Routes>
+          <Route path="/" element={<RepoList currentPage={currentPage} setCurrentPage={setCurrentPage}/>} />
+          <Route path="/repository/:owner/:repoName" element={<RepoDetails/>} />
+          <Route path="/owner/:owner" element={<OwnerDetails/>} />
+        </Routes>
+      </Content>
     </Router>
   )
 };

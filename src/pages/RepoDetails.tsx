@@ -1,5 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import { Repository } from '../types';
+import styles from './RepoDetails.module.scss'
 
 type LocationState = {
   repository: Repository
@@ -12,14 +13,18 @@ const RepoDetails: React.FC = () => {
   return (
     <div>
       <button onClick={() => window.history.back()}>Back</button>
-      <h3>{repository.name}</h3>
-      <p>{repository.description}</p>
-      <a href={repository.html_url} target="_blank" rel="noopener noreferrer">
-        View on GitHub
-      </a>
-      {repository.owner?.login &&
-        <p>Owner: <a href={`/owner/${repository.owner.login}`}>{repository.owner.login}</a></p>
-      }
+      <div className={styles.repoDetailsContainer}>
+        <h3>
+          {repository.owner?.login &&
+            <a href={`/owner/${repository.owner.login}`}>{repository.owner.login} / </a>
+          }
+          {repository.name}
+        </h3>
+        <p>{repository.description}</p>
+        <a href={repository.html_url} target="_blank" rel="noopener noreferrer">
+          View on GitHub
+        </a>
+      </div>
     </div>
   );
 };

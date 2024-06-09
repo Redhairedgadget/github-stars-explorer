@@ -1,3 +1,4 @@
+import styles from './RepoList.module.scss'
 import { Link } from 'react-router-dom';
 import Pagination from '../components/Pagination';
 import { useFetchRepos } from '../apis/useFetchRepos';
@@ -26,11 +27,15 @@ const RepoList: React.FC<RepoListProps> = ({currentPage, setCurrentPage}) => {
     <div>
       {repoQuery.isSuccess &&
         <div>
-          <table>
+          {
+            repoQuery.data.totalPages > 1 && 
+              <Pagination currentPage={currentPage} totalPages={repoQuery.data.totalPages} handlePageChange={handlePageChange}/>
+          }
+          <table className={styles.table}>
             <thead>
               <tr>
                 <th>Name</th>
-                <th>Stars</th>
+                <th>⭐</th>
               </tr>
             </thead>
 
@@ -53,9 +58,6 @@ const RepoList: React.FC<RepoListProps> = ({currentPage, setCurrentPage}) => {
             </tbody>
 
           </table>
-          {repoQuery.data.totalPages > 1 && 
-            <Pagination currentPage={currentPage} totalPages={repoQuery.data.totalPages} handlePageChange={handlePageChange}/>
-          }
         </div>
       }
     </div>

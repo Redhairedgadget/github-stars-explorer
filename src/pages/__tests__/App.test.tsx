@@ -31,7 +31,7 @@ describe('Home Page', () => {
     renderWithProviders();
 
     expect(screen.getByText((content, element) => {
-      return element?.tagName.toLowerCase() === 'a' && content.includes('Top ⭐ Repositories');
+      return element?.tagName.toLowerCase() === 'a' && content.includes('Github STARS');
     })).toBeInTheDocument();
   });
 
@@ -47,7 +47,7 @@ describe('Home Page', () => {
     expect(screen.getByText('Loading...')).toBeInTheDocument();
   });
 
-  test('should render RepoList when request is successful', async () => {
+  test('should render list of repos when request is successful', async () => {
     (useFetchRepos as jest.Mock).mockReturnValue({
       isLoading: false,
       isError: false,
