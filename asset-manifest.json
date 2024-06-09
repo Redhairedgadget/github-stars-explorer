@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/github-stars-explorer/static/css/main.a11896d2.css",
+    "main.js": "/github-stars-explorer/static/js/main.37d750b7.js",
+    "index.html": "/github-stars-explorer/index.html",
+    "static/media/LocationIcon.svg": "/github-stars-explorer/static/media/LocationIcon.dec2fc818a78c54bafa2c382b1b5bcf2.svg",
+    "main.a11896d2.css.map": "/github-stars-explorer/static/css/main.a11896d2.css.map",
+    "main.37d750b7.js.map": "/github-stars-explorer/static/js/main.37d750b7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a11896d2.css",
+    "static/js/main.37d750b7.js"
+  ]
+}
