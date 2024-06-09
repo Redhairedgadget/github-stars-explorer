@@ -1,9 +1,8 @@
 import axios from 'axios';
-import { RepositoriesResponse } from './types';
 
 const API_BASE_URL = 'https://api.github.com';
 
-export const fetchTopStarredRepositories = async (page: number): Promise<RepositoriesResponse> => {
+export const fetchTopStarredRepositories = async (page: number) => {
     try {
       const response = await axios.get(`${API_BASE_URL}/search/repositories`, {
         params: {
@@ -17,24 +16,25 @@ export const fetchTopStarredRepositories = async (page: number): Promise<Reposit
 
       // Get total pages from the Link header
         const linkHeader = response.headers.link;
+        console.log('linkHeader: ', response)
         const totalPages = linkHeader ? parseInt(linkHeader.match(/page=(\d+)>; rel="last"/)[1]) : 1;
-
+      
+      console.log({
+        repositories: response.data.items,
+        totalPages
+      })
       return {
         repositories: response.data.items,
         totalPages
       }
     } catch (error) {
+      // return error
       console.error('Error fetching top starred repositories:', error);
       throw error;
     }
 };
 
-export const fetchRepositoryDetails = async (owner: string, repo: string) => {
-  const response = await axios.get(`${API_BASE_URL}/repos/${owner}/${repo}`);
-  return response.data;
-};
-
-export const fetchOwnerDetails = async (username: string) => {
-  const response = await axios.get(`${API_BASE_URL}/users/${username}`);
+export const fetchOwnerDetails = async (owner: string) => {
+  const response = await axios.get(`${API_BASE_URL}/users/${owner}`);
   return response.data;
 };
