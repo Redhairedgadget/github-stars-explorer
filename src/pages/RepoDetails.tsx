@@ -16,7 +16,7 @@ const RepoDetails: React.FC = () => {
       <div className={styles.repoDetailsContainer}>
         <h3>
           {repository.owner?.login &&
-            <a href={`/owner/${repository.owner.login}`}>{repository.owner.login} / </a>
+            <a href={`/#/owner/${repository.owner.login}`}>{repository.owner.login} / </a>
           }
           {repository.name}
         </h3>

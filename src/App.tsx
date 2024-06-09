@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import RepoList from './pages/RepoList';
 import OwnerDetails from './pages/OwnerDetails';
 import RepoDetails from './pages/RepoDetails';
