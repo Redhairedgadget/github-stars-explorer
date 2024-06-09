@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Repository } from '../types';
 import styles from './RepoDetails.module.scss'
 
@@ -16,7 +16,7 @@ const RepoDetails: React.FC = () => {
       <div className={styles.repoDetailsContainer}>
         <h3>
           {repository.owner?.login &&
-            <a href={`/#/owner/${repository.owner.login}`}>{repository.owner.login} / </a>
+            <Link to={`/owner/${repository.owner.login}`}>{repository.owner.login} / </Link>
           }
           {repository.name}
         </h3>
