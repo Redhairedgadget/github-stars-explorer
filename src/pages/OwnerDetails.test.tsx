@@ -48,9 +48,10 @@ describe('OwnerDetails Component', () => {
       isError: true,
       isSuccess: false,
       data: null,
+      error: new Error('An error occurred'),
     });
 
     render(<OwnerDetails />);
-    expect(screen.getByText('Error fetching data')).toBeInTheDocument();
+    expect(screen.getByText('An error occurred')).toBeInTheDocument();
   });
 });

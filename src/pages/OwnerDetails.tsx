@@ -2,7 +2,8 @@ import { useParams } from 'react-router-dom';
 import { useFetchOwnerDetails } from '../apis/useFetchOwnerDetails';
 import styles from './OwnerDetails.module.scss'
 import {ReactComponent as LocationIcon} from '../assets/LocationIcon.svg'
-import Spinner from '../components/Spinner';
+import Spinner from '../components/ui/Spinner';
+import ErrorMessage from '../components/ui/ErrorMessage';
 
 const Owner: React.FC = () => {
   const { owner } = useParams<{owner: string}>();
@@ -13,7 +14,7 @@ const Owner: React.FC = () => {
   }
 
   if (ownerDetails.isError) {
-    return <p>Error fetching data</p>;
+    return <ErrorMessage message={ownerDetails.error.message} />;
   }
 
   return (
@@ -31,7 +32,7 @@ const Owner: React.FC = () => {
             <div className={styles.info}>
               <h1 className={styles.name}>{ownerDetails.data.login}</h1>
               <p className={styles.bio}>{ownerDetails.data.bio}</p>
-              <p><LocationIcon style={{ fill: 'var(--very-light-gray)' }}/> {ownerDetails.data.location}</p>
+              {ownerDetails.data.location && <p><LocationIcon style={{ fill: 'var(--very-light-gray)' }}/> {ownerDetails.data.location}</p>}
               <a href={ownerDetails.data.html_url} target="_blank" rel="noopener noreferrer">
                 View on GitHub
               </a>

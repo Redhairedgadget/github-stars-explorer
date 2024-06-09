@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Spinner.module.scss';
-import { ReactComponent as GithubLogo } from '../assets/GithubLogo.svg'
+import { ReactComponent as GithubLogo } from '../../assets/GithubLogo.svg'
 
 const Spinner: React.FC = () => {
   return (

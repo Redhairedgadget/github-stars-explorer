@@ -92,10 +92,11 @@ describe('Home Page', () => {
       isError: true,
       isSuccess: false,
       data: null,
+      error: new Error('An error occurred'),
     });
     renderWithProviders();
 
-    const errorNode = await waitFor(() => screen.getByText('Error fetching data'));
+    const errorNode = await waitFor(() => screen.getByText('An error occurred'));
     expect(errorNode).toBeInTheDocument();
   });
 });

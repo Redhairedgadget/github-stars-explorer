@@ -1,8 +1,9 @@
 import styles from './RepoList.module.scss'
 import { Link } from 'react-router-dom';
-import Pagination from '../components/Pagination';
+import Pagination from '../components/layout/Pagination';
 import { useFetchRepos } from '../apis/useFetchRepos';
-import Spinner from '../components/Spinner';
+import Spinner from '../components/ui/Spinner';
+import ErrorMessage from '../components/ui/ErrorMessage';
 
 interface RepoListProps {
   currentPage: number
@@ -21,7 +22,7 @@ const RepoList: React.FC<RepoListProps> = ({currentPage, setCurrentPage}) => {
   }
 
   if (repoQuery.isError) {
-    return <p>Error fetching data</p>;
+    return <ErrorMessage message={repoQuery.error.message} />;
   }
 
   return (
