@@ -7,7 +7,7 @@ import ErrorMessage from '../components/ui/ErrorMessage';
 
 const Owner: React.FC = () => {
   const { owner } = useParams<{owner: string}>();
-  const ownerDetails = useFetchOwnerDetails(owner!)
+  const ownerDetails = useFetchOwnerDetails(owner!) // component is not accessible if owner wasn't retrieved, thus it is always string
 
   if (ownerDetails.isLoading) {
     return <Spinner />

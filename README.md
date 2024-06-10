@@ -1,8 +1,11 @@
 # GitHub STARS Explorer
 
 ## Project Overview
-This web application lists GitHub repositories by star count. Users can view repository details and explore owner information.
-Deployed version available here: https://redhairedgadget.github.io/github-stars-explorer/
+This web application lists GitHub repositories by star count.
+Deployed version is available here: https://redhairedgadget.github.io/github-stars-explorer/
+
+Repository details are available by clicking on repository's name on the list.
+Owner details are available by clicking on owner's name on repository's details.
 
 ## Setup Instructions
 
