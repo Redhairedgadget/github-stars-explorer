@@ -72,19 +72,3 @@ button {
 img {
   border-radius: 50%;
 }
-
-.error {
-  color: var(--red);
-  background-color: var(--light-red);
-  padding: 0.5rem;
-  border: 1px solid var(--red);
-  border-radius: var(--border-radius);
-}
-
-.loading {
-  color: var(--light-gray);
-  text-align: center;
-  padding: 1rem;
-  border-radius: var(--border-radius);
-  margin: 1rem;
-}

@@ -18,17 +18,11 @@ export const fetchTopStarredRepositories = async (page: number) => {
         const linkHeader = response.headers.link;
         const totalPages = linkHeader ? parseInt(linkHeader.match(/page=(\d+)>; rel="last"/)[1]) : 1;
       
-      console.log({
-        repositories: response.data.items,
-        totalPages
-      })
       return {
         repositories: response.data.items,
         totalPages
       }
     } catch (error) {
-      // return error
-      console.error('Error fetching top starred repositories:', error);
       throw error;
     }
 };

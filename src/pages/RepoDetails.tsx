@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Repository } from '../types';
+import { Repository } from '../apis/types';
 import styles from './RepoDetails.module.scss'
 
 type LocationState = {
